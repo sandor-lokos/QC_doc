@@ -1,0 +1,101 @@
+{
+  "qc": {
+    "config": {
+      "database": {
+        "implementation": "CCDB",
+        "host": "qcdb.cern.ch:8083",
+        "username": "not_applicable",
+        "password": "not_applicable",
+        "name": "not_applicable"
+      },
+      "monitoring": {
+        "url": "influxdb-unix:///tmp/telegraf.sock"
+      },
+      "consul": {
+        "url": "http://localhost:8500"
+      },
+      "conditionDB": {
+        "url": "qcdb.cern.ch:8083"
+      },
+      "bookkeeping": {
+        "url": "alio2-cr1-hv-web01.cern.ch:4001"
+      }
+    },
+    "tasks": {
+      "DigitQcTaskFT0": {
+        "active": "true",
+        "className": "o2::quality_control_modules::ft0::DigitQcTaskLaser",
+        "moduleName": "QcFT0",
+        "detectorName": "FT0",
+        "taskName": "AgeingTask",
+        "cycleDurationSeconds": "60",
+        "maxNumberCycles": "-1",
+        "resetAfterCycles": "1",
+        "disableLastCycle": "true",
+        "mergingMode": "delta",
+        "mergerCycleMultiplier": "1",
+        "mergersPerLayer": ["3", "1"],
+        "dataSource": {
+          "type": "dataSamplingPolicy",
+          "name": "ft0-digits"
+        },
+        "taskParameters": {
+          "trgThresholdTimeLow": "-192",
+          "trgThresholdTimeHigh": "192",
+          "trgModeSide": "A+C",
+          "trgModeThresholdVar": "Ampl"
+        },
+
+        "location": "local",
+        "localMachines": [
+          "epn",
+          "localhost"
+        ],
+        "remoteMachine": "alio2-cr1-qc01.cern.ch",
+        "remotePort": "29250",
+        "localControl": "odc"
+      },
+      "RawDataMetricFT0": {
+        "active": "true",
+        "className": "o2::quality_control_modules::fit::RawDataMetricTask",
+        "moduleName": "QcFIT",
+        "detectorName": "FT0",
+        "taskName": "RawDataMetric",
+        "cycleDurationSeconds": "300",
+        "maxNumberCycles": "-1",
+        "resetAfterCycles": "1",
+        "mergingMode": "delta",
+        "mergerCycleMultiplier": "1",
+        "dataSource": {
+          "type": "direct",
+          "query": "rawDataMetric:FT0/RawDataMetric/0"
+        },
+        "location": "local",
+        "localMachines": [
+          "epn",
+          "localhost"
+        ],
+        "remoteMachine": "alio2-cr1-qc01.cern.ch",
+        "remotePort": "29251",
+        "localControl": "odc"
+      }
+    }
+  },
+  "dataSamplingPolicies": [
+    {
+      "id": "ft0-digits",
+      "active": "true",
+      "machines": [],
+      "query_comment": "query is in the format of binding1:origin1/description1/subSpec1[;binding2:...]",
+      "query": "digits:FT0/DIGITSBC/0;channels:FT0/DIGITSCH/0",
+      "samplingConditions": [
+        {
+          "condition": "random",
+          "fraction": "1.",
+          "seed": "4533"
+        }
+      ],
+      "blocking": "false"
+    }
+  ]
+}

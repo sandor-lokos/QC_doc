@@ -30,7 +30,9 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 | JSON parameter | FLP config | EPN config |
 | -------------  | ------------- | ------------- |
+| ```qc/config/database```   | ```ali-qcdb.cern.ch:8083```  | ```qcdb.cern.ch:8083```  |
 | ```qc/config/conditionDB```   | ```o2-ccdb.internal```  | ```qcdb.cern.ch:8083```  |
+| ```qc/tasks/DigitQcTaskFT0/taskName```   |  x  | ```DigitQcTask```  |
 | ```qc/tasks/DigitQcTaskFT0/disableLastCycle```   |  x  | ```true```  |
 | ```qc/tasks/DigitQcTaskFT0/mergingMode```   |  x  | ```delta```  |
 | ```qc/tasks/DigitQcTaskFT0/mergerCycleMultiplier```   |  x  | ```"1"```  |
@@ -44,3 +46,9 @@ An example JSON file are available in Consul and is copied it to [here](https://
 | ```qc/tasks/DigitQcTaskFT0/localControl```   |  x  | ```odc```  |
 | ```qc/tasks/DigitQcTaskFT0/RawDataMetricFT0```   |  x  | complete block of settings that is missing from FLP JSON  |
 | ```dataSamplingPolicies/*.*```   |  x  | independent block from qc that is referred in ```qc/tasks/DigitQcTaskFT0/dataSource/type```   |
+
+Since the ```taskName``` is specified only in the case of the EPN config file, I suspect that the whole ```qc/tasks/``` should 
+be edited according to the needs. E.g., in the case of the aging task the ```taskName``` should be ```AgeingTask```, the
+```className``` should be ```DigitQcTaskLaser``` the ```taskParameters``` should be copied from the FLP JSON.
+
+For demonstration, [here]( is the FLP JSON file for the aging task.
