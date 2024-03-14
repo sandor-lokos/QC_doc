@@ -30,7 +30,7 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 | JSON parameter | FLP config | EPN config |
 | -------------  | ------------- | ------------- |
-| ```qc/config/database```   | ```ali-qcdb.cern.ch:8083```  | ```qcdb.cern.ch:8083```  |
+| ```qc/config/database```   | ```ali-qcdb.cern.ch:8083```  | ```qcdb.cern.ch:8083https://github.com/sandor-lokos/QC_doc/blob/master/ft0-ageing-alio2-cr1-flp200.json)```  | and [here]() is one that should work based on the arguments above. 
 | ```qc/config/conditionDB```   | ```o2-ccdb.internal```  | ```qcdb.cern.ch:8083```  |
 | ```qc/tasks/DigitQcTaskFT0/taskName```   |  x  | ```DigitQcTask```  |
 | ```qc/tasks/DigitQcTaskFT0/disableLastCycle```   |  x  | ```true```  |
@@ -51,4 +51,6 @@ Since the ```taskName``` is specified only in the case of the EPN config file, I
 be edited according to the needs. E.g., in the case of the aging task the ```taskName``` should be ```AgeingTask```, the
 ```className``` should be ```DigitQcTaskLaser``` the ```taskParameters``` should be copied from the FLP JSON.
 
-For demonstration, [here]( is the FLP JSON file for the aging task.
+For demonstration, [here](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-ageing-alio2-cr1-flp200.json) is the 
+FLP JSON file for the aging task and [here](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-digits-ageing-qc-epn.json)
+is one that should work based on the arguments above. Now, this is only for aging test.
