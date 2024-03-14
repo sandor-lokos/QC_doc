@@ -21,8 +21,8 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 ## Differencies between FLP and EPN configs
 
-The JSON config files for the QC on FLP and QC on EPN is in the configuration of the remote machines, mainly. Here I use the two JSON files that were mentioned in the previous sections.
-
-Let's go through on them and point out the important differences.
+|  FLP  |  EPN  |
+-----------------
+|  X    |   Y   |
 
 
