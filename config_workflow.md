@@ -21,6 +21,7 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 ## Differencies between FLP and EPN configs
 
-|  FLP  |  EPN  |
-|---------------|
-|  X    |   Y   |
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
