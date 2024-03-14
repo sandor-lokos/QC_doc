@@ -54,3 +54,6 @@ be edited according to the needs. E.g., in the case of the aging task the ```tas
 For demonstration, [here](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-ageing-alio2-cr1-flp200.json) is the 
 FLP JSON file for the aging task and [here](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-digits-ageing-qc-epn.json)
 is an EPN JSON that should work based on the arguments above. Now, this is only for aging test.
+
+I also just assume that the combination of them should work, too, and as many ```qc/tasks/DigitQcTaskFT0``` block can be added
+as many the user needs.
