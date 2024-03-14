@@ -30,7 +30,12 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 | JSON parameter | FLP config | EPN config |
 | -------------  | ------------- | ------------- |
-| Content Cell   | Content Cell  | Content Cell  |
-| Content Cell   | Content Cell  | Content Cell  |
+| config/conditionDB   | o2-ccdb.internal  | qcdb.cern.ch:8083  |
+| tasks/DigitQcTaskFT0/disableLastCycle   |  x  | true  |
+| tasks/DigitQcTaskFT0/mergingMode   |  x  | delta  |
+| tasks/DigitQcTaskFT0/mergerCycleMultiplier   |  x  | "1"  |
+| tasks/DigitQcTaskFT0/mergersPerLayer   |  x  | ["3","1"]  |
+| tasks/DigitQcTaskFT0/dataSource/type   |  direct  | dataSamplingPolicy (given in the JSON)  |
+| tasks/DigitQcTaskFT0/dataSource/query   |  digits:FT0/DIGITSBC/0;channels:FT0/DIGITSCH/0  | ft0-digits  |
 
 
