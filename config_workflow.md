@@ -24,5 +24,3 @@ An example JSON file are available in Consul and is copied it to [here](https://
 |  FLP  |  EPN  |
 |---------------|
 |  X    |   Y   |
-
-
