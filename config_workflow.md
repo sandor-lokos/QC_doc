@@ -4,14 +4,11 @@
 Details are given [here](https://github.com/sbysiak/FIT_QC_primer/blob/main/FIT_QC_primer.md#the-controlworkflows).
 There is also a very detailed documentation in [O2DPG](https://github.com/AliceO2Group/O2DPG/blob/master/DATA/production/README.md#remarks-on-qc)
 where the following can be found as a remark on the QC
-```
-** What we know from the detailed documentation:
 
-The JSON files for the individual detectors are merged into one JSON file, which is cached during the run on the shared EPN home
-folder. The default JSON file per detector is defined in qc-workflow.sh. JSONs per detector can be overridden by exporting 
-QC_JSON_[DETECTOR_NAME], e.g. QC_JSON_TPC, when creating the workflow. The global section of the merged qc JSON config is taken
-from qc-sync/qc-global.json
-```
+>The JSON files for the individual detectors are merged into one JSON file, which is cached during the run on the shared EPN home
+>folder. The default JSON file per detector is defined in qc-workflow.sh. JSONs per detector can be overridden by exporting 
+>QC_JSON_[DETECTOR_NAME], e.g. QC_JSON_TPC, when creating the workflow. The global section of the merged qc JSON config is taken
+>from qc-sync/qc-global.json
 
 Quick Start the main differences are pointed out between the FLP and EPN configurations here.
 
