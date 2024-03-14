@@ -30,17 +30,17 @@ An example JSON file are available in Consul and is copied it to [here](https://
 
 | JSON parameter | FLP config | EPN config |
 | -------------  | ------------- | ------------- |
-| qc/config/conditionDB   | o2-ccdb.internal  | qcdb.cern.ch:8083  |
-| qc/tasks/DigitQcTaskFT0/disableLastCycle   |  x  | true  |
-| qc/tasks/DigitQcTaskFT0/mergingMode   |  x  | delta  |
-| qc/tasks/DigitQcTaskFT0/mergerCycleMultiplier   |  x  | "1"  |
-| qc/tasks/DigitQcTaskFT0/mergersPerLayer   |  x  | ["3","1"]  |
-| qc/tasks/DigitQcTaskFT0/dataSource/type   |  direct  | dataSamplingPolicy (given in the JSON)  |
-| qc/tasks/DigitQcTaskFT0/dataSource/query   |  digits:FT0/DIGITSBC/0;channels:FT0/DIGITSCH/0  | ft0-digits  |
-| qc/tasks/DigitQcTaskFT0/location   |  x  | "epn", "localhost"  |
-| qc/tasks/DigitQcTaskFT0/localMachines   |  x  | ft0-digits  |
-| qc/tasks/DigitQcTaskFT0/remoteMachine   |  x  | alio2-cr1-qc01.cern.ch  |
-| qc/tasks/DigitQcTaskFT0remotePort   |  x  | "29250"  |
-| qc/tasks/DigitQcTaskFT0/localControl   |  x  | odc  |
-| qc/tasks/DigitQcTaskFT0/RawDataMetricFT0   |  x  | complete block of settings that is missing from FLP JSON  |
-| dataSamplingPolicies/*.*   |  x  | independent block from qc that is referred in ```qc/tasks/DigitQcTaskFT0/dataSource/type```   |
+| ```qc/config/conditionDB```   | ```o2-ccdb.internal```  | ```qcdb.cern.ch:8083```  |
+| ```qc/tasks/DigitQcTaskFT0/disableLastCycle```   |  x  | ```true```  |
+| ```qc/tasks/DigitQcTaskFT0/mergingMode```   |  x  | ```delta```  |
+| ```qc/tasks/DigitQcTaskFT0/mergerCycleMultiplier```   |  x  | ```"1"```  |
+| ```qc/tasks/DigitQcTaskFT0/mergersPerLayer```   |  x  | ```["3","1"]```  |
+| ```qc/tasks/DigitQcTaskFT0/dataSource/type```   |  ```direct```  | ```dataSamplingPolicy``` (given in the JSON)  |
+| ```qc/tasks/DigitQcTaskFT0/dataSource/query```   |  ```digits:FT0/DIGITSBC/0;channels:FT0/DIGITSCH/0```  | ```ft0-digits```  |
+| ```qc/tasks/DigitQcTaskFT0/location```   |  x  | ```"epn", "localhost"```  |
+| ```qc/tasks/DigitQcTaskFT0/localMachines```   |  x  | ```ft0-digits```  |
+| ```qc/tasks/DigitQcTaskFT0/remoteMachine```   |  x  | ```alio2-cr1-qc01.cern.ch```  |
+| ```qc/tasks/DigitQcTaskFT0remotePort```   |  x  | ```"29250"```  |
+| ```qc/tasks/DigitQcTaskFT0/localControl```   |  x  | ```odc```  |
+| ```qc/tasks/DigitQcTaskFT0/RawDataMetricFT0```   |  x  | complete block of settings that is missing from FLP JSON  |
+| ```dataSamplingPolicies/*.*```   |  x  | independent block from qc that is referred in ```qc/tasks/DigitQcTaskFT0/dataSource/type```   |
