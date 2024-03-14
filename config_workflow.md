@@ -1,3 +1,3 @@
-** This
-*** and that
+** This ***
+*** and that ***
 some text
