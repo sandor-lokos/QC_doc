@@ -1,9 +1,39 @@
-# QC workflow configuration 
-## FLP workflow configuration
+# QC workflow configuration
 
-Details are given [here](https://github.com/sbysiak/FIT_QC_primer/blob/main/FIT_QC_primer.md#the-controlworkflows).
-There is also a very detailed documentation in [O2DPG](https://github.com/AliceO2Group/O2DPG/blob/master/DATA/production/README.md#remarks-on-qc)
-where the following can be found as a remark on the QC
+## DPL workflow configuration
+
+There is an O2 package called [ControlWorkflows](https://github.com/AliceO2Group/ControlWorkflows/tree/master) which hosts the
+configuration tree for AliECS workflow templates (WFT) and task templates (TT). There is an extensive [README](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md)
+that contains many details. Here a short introduction is given only.
+
+The [ControlWorkflows](https://github.com/AliceO2Group/ControlWorkflows/tree/master) contains three directories
+[tasks](https://github.com/AliceO2Group/ControlWorkflows/tree/master/tasks), 
+[workflows](https://github.com/AliceO2Group/ControlWorkflows/tree/master/workflows).
+The repository contains configuration of DPL workflows that runs on FLP or QC nodes. EPN workflows are defined
+in [O2DPG](https://github.com/AliceO2Group/O2DPG/tree/master/DATA/production) as it is described
+[below](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#introduction).
+In the README a [Quick reference](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#quick-reference) is also
+given. By following that one can create a new workflow and test it.
+
+### Introduction
+
+Shortly, master workflow template can be used that is [readout-dataflow](https://github.com/AliceO2Group/ControlWorkflows/blob/master/workflows/readout-dataflow.yaml)
+wherein it is declared what DPL workflows are included. For example, for FT0, the ```ft0_dpl_workflow``` is defined [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/workflows/readout-dataflow.yaml#L278)
+and in the array ```values``` the [workflows are listed](https://github.com/AliceO2Group/ControlWorkflows/blob/master/workflows/readout-dataflow.yaml#L278)
+that should be executed. These DPL commands are in the [jit](https://github.com/AliceO2Group/ControlWorkflows/tree/master/jit) directory,
+These workflows can be then selected in the AliECS GUI for the concrete detectors. During creation of an environment, 
+AliECS generates workflow & task templates Just-In-Time (JIT) or reuses the most recent ones if the workflow, software 
+version and config files have not changed. Thus, to add a new workflow, one should add a file with the DPL command to 
+[jit](https://github.com/AliceO2Group/ControlWorkflows/tree/master/jit) and its name to the corresponding ```values```
+array in ```readout-dataflow```. About how the DPL commands should look like and JIT workflow generation, one can read
+[here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md) but let's summarize it shortly.
+
+### FLP workflows
+
+
+
+
+
 
 >The JSON files for the individual detectors are merged into one JSON file, which is cached during the run on the shared EPN home
 >folder. The default JSON file per detector is defined in qc-workflow.sh. JSONs per detector can be overridden by exporting 
