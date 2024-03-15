@@ -81,3 +81,12 @@ is an EPN JSON that should work based on the arguments above. Now, this is only 
 
 I also just assume that the combination of them should work, too, and as many ```qc/tasks/DigitQcTaskFT0``` block can be added
 as many the user needs.
+
+
+To set up a QC module to run on EPN, the basic JSON can be overridden. The default JSON file per detector is defined in 
+```qc-workflow.sh``` and it can be modified by exporting e.g. ```QC_JSON_FT0``` when creating a workflow. The global
+section of the merged qc JSON config is taken from ```qc-sync/qc-global.json```. This is shortly mentioned
+[here](https://github.com/AliceO2Group/O2DPG/tree/master/DATA/production#remarks-on-qc).
+
+It seems also possible that the config. ```WORKFLOW_DETECTORS_FLP_PROCESSING``` variable might be for that
+[here](https://github.com/AliceO2Group/O2DPG/tree/master/DATA/production#configuration-options)
