@@ -13,9 +13,7 @@ The repository contains configuration of DPL workflows that runs on FLP or QC no
 in [O2DPG](https://github.com/AliceO2Group/O2DPG/tree/master/DATA/production) as it is described
 [below](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#introduction).
 In the README a [Quick reference](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#quick-reference) is also
-given. By following that one can create a new workflow and test it.
-
-### Introduction
+given. By following that, one can create a new workflow and test it.
 
 Shortly, master workflow template can be used that is [readout-dataflow](https://github.com/AliceO2Group/ControlWorkflows/blob/master/workflows/readout-dataflow.yaml)
 wherein it is declared what DPL workflows are included. For example, for FT0, the ```ft0_dpl_workflow``` is defined [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/workflows/readout-dataflow.yaml#L278)
