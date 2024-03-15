@@ -45,9 +45,9 @@ to combine the FLP and EPN QC config files and use different ```"localMachines"`
 
 The remote QC workflow should be just one.
 
+----------------------------------------------------------------------------------------------------
 
-
-
+TO BE UPDATED FROM HERE
 
 >The JSON files for the individual detectors are merged into one JSON file, which is cached during the run on the shared EPN home
 >folder. The default JSON file per detector is defined in qc-workflow.sh. JSONs per detector can be overridden by exporting 
