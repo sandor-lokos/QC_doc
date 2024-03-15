@@ -51,7 +51,8 @@ but Consul must be modified very carefully and for studying it is better to have
 details of the JSON files could be out-dated, however, the structure should be the same.
 
 For testing, the JSON files should be in Consul to be used in production or [ECS](https://ali-ecs.cern.ch/) or can be done
-in STAGING to be on the safe side. In the example below, the FT0 QC JSON will be used. 
+in STAGING to be on the safe side. Anyway, on the configuration of the ECS GUI is shown [here](https://github.com/AliceO2Group/O2DPG/tree/master/DATA/aliecs_documentation). 
+In the example below, the FT0 QC JSON will be used. 
 The [JSON file](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-digits-qc-alio2-cr1-flp200.json) is copied to here.
 
 Example JSON files are available in Consul and is copied it to [here](https://github.com/sandor-lokos/QC_doc/blob/master/ft0-digits-qc-epn.json).
