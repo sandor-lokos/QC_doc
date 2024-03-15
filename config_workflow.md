@@ -25,11 +25,25 @@ These workflows can be then selected in the AliECS GUI for the concrete detector
 AliECS generates workflow & task templates Just-In-Time (JIT) or reuses the most recent ones if the workflow, software 
 version and config files have not changed. Thus, to add a new workflow, one should add a file with the DPL command to 
 [jit](https://github.com/AliceO2Group/ControlWorkflows/tree/master/jit) and its name to the corresponding ```values```
-array in ```readout-dataflow```. About how the DPL commands should look like and JIT workflow generation, one can read
-[here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md) but let's summarize it shortly.
+array in ```readout-dataflow```. About how the DPL commands should look like, check [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#flp-workflows)
+and for adding the QC to FLP workflows [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#adding-qc-to-flp-workflows).
 
-### FLP workflows
 
+It is also possible to run multinode QC, see [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#adding-multinode-qc-to-flps).
+To parallel raun on EPNs by adding a few more lines to the configuration as it is written [here](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#adding-multinode-qc-to-flps).
+First, make sure that the QC config specify ```"remoteMachine"``` and ```"remotePort"``` parameters. They are not dynamically
+assigned for connections between the two control systems. The remote machine name might need the ```.cern.ch``` suffix.
+Please use the port number within the range allocated to your subsystem. For ```FDD: 29200-29249```, for ```FT0: 29250-29299```,
+for ```FV0: 29300-29349```. It is advised to check the connection with a simple TCP client/server application beforehand
+(e.g. ```nc```). Also, do not forget to add ```"localControl" : "odc"``` in the QC task configuration, which will make AliECS
+templates avoid dynamic resource assignement. So running QC on EPN requires a DPL command file in the ```jit``` directory, 
+similarly to the case of running parallel QC on FLPs.
+
+The documentation also contains the [advice](https://github.com/AliceO2Group/ControlWorkflows/blob/master/README.md#different-parallel-qc-running-on-flps-and-epns)
+to combine the FLP and EPN QC config files and use different ```"localMachines"``` for them. Then, one can use different
+```--host``` parameter to the local QC workflows to indicate which tasks should be running in the given environment.
+
+The remote QC workflow should be just one.
 
 
 
